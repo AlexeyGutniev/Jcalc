@@ -3,12 +3,20 @@ import java.util.*;
 
 public class Jcalc{
     static Scanner scan=new Scanner(System.in);
+    static ArrayList<Integer> results=new ArrayList<>();
     public static void main(String[]args){
-    int num1=getInt();
-    char operation=getOperation();
-    int num2=getInt();
-    int result=calc(num1,num2,operation);
-    System.out.println ("your result is: "+result+" .");}
+
+    int t=2;
+    while(t>0){
+        calcAll();
+        t--;
+    }
+    Collections.sort(results);
+    System.out.println("All the results in ascending order: ");
+    for (int p:results){
+        System.out.print(p+" ");
+    }
+    }
 
     public static int getInt(){
         int num;
@@ -55,5 +63,17 @@ public class Jcalc{
     return result;
 
     }
+    public static void calcAll(){
+        int num1=getInt();
+        char operation=getOperation();
+        int num2=getInt();
+        int result=calc(num1,num2,operation);
+        System.out.println ("your result is: "+result+" .");
+        results.add(result);
+        }
 
-}
+            }
+
+
+
+
